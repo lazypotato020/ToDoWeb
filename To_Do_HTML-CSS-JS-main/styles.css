@@ -1,0 +1,158 @@
+  /* General Theme Variables */
+:root {
+    --bg-gradient: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    --text-color: #333;
+    --overlay-color: rgba(255, 255, 255, 0.5);
+    --button-color: #c47c09;
+    --button-hover: #c47c09;
+    --input-focus: #c47c09;
+    --gif-url: url('./assets/sakura-5470_256.gif');
+}
+ 
+[data-theme="dark"] {
+    --bg-gradient: linear-gradient(135deg, #191717, #4f4c4b);
+    --text-color: #000000;
+    --overlay-color: rgba(61, 60, 60, 0.6);
+    --gif-url: url('./assets/leaves-8724_256.gif');
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(var(--overlay-color), var(--overlay-color)),
+        var(--gif-url) no-repeat center center fixed, 
+        var(--bg-gradient);
+    background-size: cover;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    background: var(--overlay-color);
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Task Tracker Header */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--button-color);
+}
+
+/* Input Fields */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--input-focus);
+}
+
+/* Buttons */
+button {
+    background: var(--button-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding: 6px 10px; /* Reduce padding for smaller button size */
+    font-size: 0.85rem; /* Slightly smaller font size */
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+/* Task List Styles */
+.task-list {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Maintain consistent spacing between buttons */
+}
+.task-content span {
+    flex-grow: 1; /* Ensure the task text spans remaining space */
+}
+li span {
+    flex-grow: 1;
+}
+
+li button {
+    background: var(--button-color);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+li button:hover {
+    background: var(--button-hover);
+}
+li.completed span {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.7;
+}
+
+.task-text {
+    flex-grow: 1; /* Push the task text to the leftmost side */
+    text-align: left; /* Align task text to the left */
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between the checkbox and buttons */
+}
+
+.task-content input[type="checkbox"] {
+    margin: 0; /* Remove default margin of the checkbox */
+}
+
